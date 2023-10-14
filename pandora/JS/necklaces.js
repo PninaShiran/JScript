@@ -1,4 +1,4 @@
-﻿document.addEventListener('DOMContentLoaded', function () {
+﻿document.addEventListener('DOMContentLoaded',  () => {
     var arr1 = JSON.parse(localStorage.getItem('arr1'));
     var row = document.getElementById('row2');
     for (var i = 0; i < arr1.length; i++) {
