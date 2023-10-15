@@ -1,9 +1,24 @@
-﻿document.addEventListener("DOMContentLoaded", function () {
+﻿var prices = [];
+document.addEventListener("DOMContentLoaded", function () {
   var arr1 = JSON.parse(localStorage.getItem("arr1"));
   var row = document.getElementById("rows");
-
   if (arr1) {
     arr1.forEach(function (productData) {
+      prices.push(productData.price);
+    });
+  }
+
+  if (arr1) {
+    // Sort the prices array in ascending order.
+    prices.sort(function(a, b) {
+      return a - b;
+    });
+
+    // Sort and append product cards based on the sorted prices.
+    prices.forEach(function (price) {
+      var productData = arr1.find(function (data) {
+        return data.price === price;
+      });
       var col = createProductCard(productData);
       row.appendChild(col);
     });
@@ -25,7 +40,6 @@ function createProductCard(productData) {
 
   return col;
 }
-
 function createImage(src) {
   var image = document.createElement("img");
   image.style.width = "200px";

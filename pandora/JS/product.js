@@ -29,7 +29,7 @@ function showProductDetails () {
 }
 
 
-//הוספת מוצר לסל
+//Adding a product to the shopping cart
 function addProduct(e) {
     var s = e.target.parentElement.firstChild.src;
     var image = s.substr(s.indexOf("img"));

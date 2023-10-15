@@ -3,7 +3,7 @@
 });
 
 
-//הסרת מוצר מהסל
+//Remove a product from the basket
 function removeProduct(e) {
     var s = e.target.parentElement.firstChild.src;
     var image = s.substr(s.indexOf("img"));
@@ -21,7 +21,7 @@ function removeProduct(e) {
 }
 
 
-//הצגת המוצרים בסל קניות
+//Displaying the products in the shopping cart
 function showShopping() {
     var sum = 0;
     var arr2 = JSON.parse(localStorage.getItem("arr2"));
